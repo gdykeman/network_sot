@@ -1,0 +1,9 @@
+---
+- name: "Push Configurations"
+  hosts: cisco1,arista1
+  gather_facts: False
+
+  roles:
+  - role: backup_manager
+    function: backup
+    backup_manager_git_key_file: "{{ secret_key }}"

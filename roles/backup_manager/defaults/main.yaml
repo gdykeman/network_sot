@@ -5,7 +5,7 @@ backup_manager_version: "{{ ansible_net_version | default(None, True) }}"
 backup_manager_os: "{{ ansible_network_os | default(None, True) }}"
 backup_manager_platform: "{{ ansible_network_platform | default(None, True) }}"
 backup_manager_function: "{{ function | default('backup') }}"
-backup_manager_backup_path: "config/{{ inventory_hostname }}"
+backup_manager_backup_path: "{{ inventory_hostname }}/config"
 # yamllint disable-line rule:line-length
 backup_manager_git_url: "git@{{ backup_manager_git_server }}:{{ backup_manager_git_username }}/{{ backup_manager_git_repo }}"
 backup_manager_git_server: "github.com"
